@@ -275,7 +275,7 @@ error_used_mac_address(Context) ->
 
 -spec get_mac_addresses(ne_binary()) -> ne_binaries().
 get_mac_addresses(DbName) ->
-    case couch_mgr:get_all_results(DbName, ?CB_LIST_MAC) of
+    case couch_mgr:get_all_results(<<"mac_lookup">>, ?CB_LIST_MAC) of
         {'ok', AdJObj} -> couch_mgr:get_result_keys(AdJObj);
         _ -> []
     end.
